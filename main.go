@@ -31,6 +31,8 @@ func StartWorkers() {
 func StartGin() {
 	gin.SetMode(gin.ReleaseMode)
 
+	fmt.Println("========")
+	
 	router := gin.New()
 	router.Use(rateLimit, gin.Recovery())
 	router.LoadHTMLGlob("resources/*.templ.html")
